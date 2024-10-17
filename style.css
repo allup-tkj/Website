@@ -1,21 +1,133 @@
-* {
+/*google fonts*/
+*{
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-padding-top: 2rem;
     text-decoration: none;
     list-style: none;
     scroll-behavior: smooth;
+    font-family: "Poppins", sans-serif;
 }
-:root {
-    --main-color: #BF00FF;
-    --second-color: #424242;
+:root{
+    --main-color: #c909f9;
+    --second-color: #4909aa;
+}
+section{
+    padding: 50px 10%;
+}
+*::selection{
+    color: #fff;
+    background: var(--main-color);
+}
+img{
+    width: 100%;
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: 0 4px 41px rgb(14 55 54 / 14%);
+    padding: 15px 10%;
+    transition: 0.2s;
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    width: 120px;
+}
+.navbar{
+    display: flex;
+}
+.navbar a{
+    font-size: 1rem;
+    padding: 11px 20px;
+    color: var(--second-color);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.navbar a:hover {
+    color: var(--main-color);
+}
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+    display: none;
+}
+/*home*/
+.home{
+    width: 100%;
+    min-height: 85vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #FFF0F5;
+    gap: 1rem;
+}
+.home-text{
+    flex: 1 1 17rem;
+}
+.home-image{
+    flex: 1 1 17rem;
+}
+.home-img img{
+    animation: animate 3s linear infinite;
+}
+@keyframes animate{
+    0% {
+        transform: translate(-11px,0);
+    }
+    50% {
+        transform: translate(-0px,-11);
+    }
+    100% {
+        transform: translate(-11px,0);
+    }
+}
+.home-text span{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--second-color);
+    text-transform: uppercase;
+    margin: 0.5rem 0 1.4rem;
+}
+.home-text h1{
+    font-size: 3.2rem;
+    color: var(--main-color);
+    font-weight: bolder;
+}
+.home-text h2{
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--second-color);
+}
+.btn{
+    padding: 7px 16px;
+    border: 2px solid var(--second-color);
+    border-radius: 40px;
+    color: var(--second-color);
+    font-weight: 500;
+}
+.btn:hover{
+    color: #fff;
+    background: var(--second-color);
 }
 .heading{
     text-align: center;
     text-transform: uppercase;
-    color: var(--main-color);
+    margin-bottom: 50px;
 }
-.heading span{
+.headingspan{
     font-size: 1rem;
     font-weight: 600;
     color: var(--second-color);
@@ -23,80 +135,6 @@
 .heading h1{
     font-size: 2rem;
     color: var(--main-color);
-}
-
-/*navbar*/
-.navbar {
-    background-color: #b4c6f6;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between; /* Membuat jarak antara elemen kiri dan kanan */
-    align-items: center; /* Menyamakan tinggi elemen kiri dan kanan */
-    padding: 20px 20px; /* Menambahkan padding agar tidak terlalu rapat */
-    width: auto;
-}
-
-.brand {
-    font-family: monospace;
-    font-size: 20px;
-    color: rgb(173, 28, 235);
-    padding-left: 20px;
-}
-
-.lastname {
-    color: rgb(154, 53, 255);
-}
-
-.navbar-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    font-family: monospace;
-}
-
-.navbar-item {
-    margin: 0 10px; /* Jarak antara setiap item */
-    background-color: #BF00FF;
-    border-radius: 5px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-
-}
-
-.navbar-item a {
-    color: white;
-    text-decoration: none;
-    font-size: 20px; /* Ukuran font yang lebih kecil agar lebih sesuai */
-    padding: 14px 16px;
-
-}
-
-.navbar-item a:hover {
-    background-color: #BC35FF;
-}
-
-
-/*tentang kami*/
-.allup {
-    display: flex;
-    margin-top: 2rem;
-    margin: 0;
-    align-items: center;
-    background: #b4c6f6;
-    flex-wrap: wrap;
-}
-.logo{
-    flex: 1 1 21rem;
-    padding-left: 150px;
-}
-.text{
-    font-family: monospace;
-    flex: 1 1 21rem;
-    text-align: center;
-    padding-right: 200px;
-    padding-left: 20px;
-    font-size: 25px;
 }
 /*produk kami*/
 .row {
@@ -207,13 +245,12 @@
 }
 
 .title-prod {
-    font-size: 0.9 rem;
+    font-size: 0.9rem;
     text-align: center;
     color: var(--dark);
     font-weight: 500;
     text-decoration: none;
 }
-
 /*delivery*/
 .container {
     display: flex;
@@ -246,25 +283,34 @@
     color: var(--second-color);
 }
 
-/*tentang layanan*/
-.tentang {
+/*tentang*/
+.about{
     display: flex;
     flex-wrap: wrap;
-    background: #b4c6f6;
+    background: #FFF0F5;
     gap: 1.5rem;
 }
-.tentang-img {
+.about-img{
     flex: 1 1 17rem;
 }
-.tentang-text {
+.about-text{
     flex: 1 1 17rem;
-    padding-top: 40px;
-} 
-.tentang-text h2 {
+}
+.about-text h2{
     font-size: 1.2rem;
     color: var(--second-color);
 }
-
+.about-text p{
+    margin: 0.5rem 0 1rem;
+    text-align: justify;
+}
+iframe {
+    display:block;
+    margin: 1em auto; 
+    width: 80%; 
+    height: calc(.5625 * 80vw);
+    margin-bottom: 60px;
+}
 /*footer*/
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
@@ -441,32 +487,102 @@
     .footer-distributed .footer-center i {
         margin-left: 0;
     }
-}       
-/*video iklan*/
-h1 {
-    color: black;
-    text-align: center;
-    text-decoration: oklch(lightness chroma hue);
-    padding-top: 50px;
+}  
+
+@media (max-width: 1150px){
+    header{
+        padding: 18px 7%;
+    }
+    section{
+        padding: 50px 7%;
+    }
+    .home-text h1{
+        font-size: 3rem;
+    }
+    .home-text h2{
+        font-size: 1.5rem;
+    }
 }
-video {
-    display:block;
-    margin: auto; 
-    width: 900px; 
-    height: 500px;
-    margin-bottom: 60px;
+
+@media (max-width: 991px){
+    header{
+        padding: 18px 4%;
+    }
+    section{
+        padding: 50px 4%;
+    }
 }
-.tentang-video{
-    text-align: center;
-    margin-left: 160px;
+
+@media (max-width: 768px){
+    header{
+        padding: 11px 4%;
+    }
+    #menu-icon{
+        display: initial;
+    }
+    header .navbar{
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        box-shadow: 0 4px 4px rgb(14 55 54 / 14%);
+        border-top: 2px solid var(--main-color);
+        transition: 0.2s;
+        text-align: left;
+    }
+    .navbar.active{
+        top: 100%;
+    }
+    .navbar a{
+        padding: 1.5rem;
+        display: block;
+        color: var(--second-color);
+    }
+    .home-text span{
+        font-size: 0.9rem;
+    }
+    .home-text h1{
+        font-size: 2.4rem;
+    }
+    .home-text h2{
+        font-size: 1.2rem;
+    }
 }
-.tentang-video p{
-    text-align: center;
-    margin-left: 290px;
+
+@media (max-width: 768px){
+    .home-text{
+        padding-top: inherit;
+    }
+    .shop-container .box{
+        margin-top: 6rem;
+    }
+    .heading h1{
+        font-size: 1.5rem;
+    }
+    .heading span{
+        font-size: 0.9rem;
+    }
+    .about{
+        flex-direction: column-reverse;
+    }
 }
-.tentang-video h2{
-    text-align: center;
-    margin-left: 280px;
+
+@media (max-width: 351px){
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.home-text span{
+    font-size: 0.9rem;
+}
+.home-text h1{
+    font-size: 2.4rem;
+}
+.home-text h2{
     font-size: 1.2rem;
-    color: rgb(51, 51, 51);
 }
